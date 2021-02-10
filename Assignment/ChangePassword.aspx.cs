@@ -55,7 +55,7 @@ namespace Assignment
             var currentTime = DateTime.Now;
             TimeSpan ageDiff = currentTime - pwdAge;
 
-            if (ageDiff.TotalMinutes < 1)
+            if (ageDiff.TotalMinutes < 5)
             {
                 lbl_chk.Text = "You cannot change password within 5 minutes from the last change of password";
                 lbl_chk.ForeColor = Color.Red;
@@ -148,6 +148,7 @@ namespace Assignment
             command.Parameters.AddWithValue("@email", email);
             try
             {
+                var smth = "wow";
                 connection.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
